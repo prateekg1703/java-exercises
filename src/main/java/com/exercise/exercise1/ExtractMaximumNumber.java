@@ -12,8 +12,8 @@ public class ExtractMaximumNumber {
    * @param args arguments for main method
    */
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    String alphaNumericValue = sc.nextLine();
+    final Scanner sc = new Scanner(System.in);
+    final String alphaNumericValue = sc.nextLine();
     System.out.print(maxNumber(alphaNumericValue));
     sc.close();
   }
