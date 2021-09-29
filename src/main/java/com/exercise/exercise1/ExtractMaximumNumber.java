@@ -1,5 +1,6 @@
 package com.exercise.exercise1;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -26,11 +27,11 @@ public class ExtractMaximumNumber {
    * @param alphaNumericValue the input value by user
    * @return the maximum number obtained from the alphanumeric string
    */
-  private static Long maxNumber(final String alphaNumericValue) {
+  private static BigInteger maxNumber(final String alphaNumericValue) {
     return Arrays.stream(alphaNumericValue.split("[^\\d]"))
         .filter(s -> !"".equals(s))
-        .mapToLong(Long::parseLong)
-        .max()
-        .orElse(0);
+        .map(BigInteger::new)
+        .max(BigInteger::compareTo)
+        .orElse(BigInteger.ZERO);
   }
 }
